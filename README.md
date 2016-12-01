@@ -6,6 +6,7 @@ This program lets you play one of the greatest classic games of all time, tic ta
 Usage :octocat:
 ============
 Compile with 'javac ticTacToe.java'
+
 Run with 'java ticTacToe'
 
 License :octocat:
@@ -18,4 +19,27 @@ Open Source
 
 Authors :octocat:
 ============
-Will Zhang, Dillon Shu, Ethan Chung
+Will Zhang:octocat:, Dillon Shu, Ethan Chung
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:shit:
