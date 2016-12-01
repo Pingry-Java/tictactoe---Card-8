@@ -59,7 +59,12 @@ public class ticTacToe
 	*/
 	public static String[][] move(int position, String userSymbol, String[][] board)
 	{
-		
+		int col = position % 3;
+		int row = position / 3;
+
+		board[row][col] = userSymbol;
+
+		return board;
 	}
 	/**
 	*Checks the current board if there has been a winner (three in a row)
