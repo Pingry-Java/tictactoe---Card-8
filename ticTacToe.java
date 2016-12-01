@@ -8,7 +8,7 @@ public class ticTacToe
 	/**
 	*Main function where the game is played. The coding for the game should be here.
 	*/
-	public static void main ()
+	public static void main (String[] args)
 	{
 
 	}
