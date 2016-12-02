@@ -10,7 +10,7 @@ public class ticTacToe
 	*/
 	public static void main (String[] args)
 	{
-		
+
 	}
 	/**
 	*Creates a tic tac toe board to use
@@ -18,7 +18,18 @@ public class ticTacToe
 	*/
 	public static String[][] buildBoard()
 	{
-		
+		String [][] pirate = new String[3][3];
+		int counter = 0;
+		String converted = "asdf";
+		for (int row = 0; row < pirate.length; row++)
+		{
+			for (int col = 0; col < pirate[row].length; col++)
+			{
+				pirate[row][col] ="" + counter;
+				counter++;
+			}	
+		}
+		return pirate;
 	}
 	/**
 	*Prints out the tic tac toe board in a nice format with lines
@@ -26,7 +37,18 @@ public class ticTacToe
 	*/
 	public static void printBoard(String[][] s)
 	{
-		
+		for (int i = 0; i < s.length; i++)
+		{
+			System.out.println("-------");
+			for (int z = 0; z < s[i].length; z++)
+			{
+				System.out.print("|");
+				System.out.print(s[i][z]);
+			}
+			System.out.println("|");
+			//System.out.println("");
+		}
+		System.out.println("-------");
 	}
 	/**
 	*Gets the user's move and updates the String array with the player's symbol
@@ -37,7 +59,12 @@ public class ticTacToe
 	*/
 	public static String[][] move(int position, String userSymbol, String[][] board)
 	{
-		
+		int col = position % 3;
+		int row = position / 3;
+
+		board[row][col] = userSymbol;
+
+		return board;
 	}
 	/**
 	*Checks the current board if there has been a winner (three in a row)
@@ -142,5 +169,6 @@ public class ticTacToe
 		
 		return answer;
 	}
+
 	
 }
