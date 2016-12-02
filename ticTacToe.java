@@ -3,6 +3,7 @@
 2.Write all the methods
 3.Write the main program
 */
+import java.util.Scanner;
 public class ticTacToe
 {
 	/**
@@ -10,7 +11,35 @@ public class ticTacToe
 	*/
 	public static void main (String[] args)
 	{
-
+		Scanner keyboard = new Scanner(System.in);
+		int player1Move = 0;
+		int player2Move = 1;
+		String[][] board = buildBoard();
+		
+		System.out.println("Player 1, enter your 1 character symbol - ");
+		String player1Sym = keyboard.nextLine();
+		
+		System.out.println("Player 2, enter your 1 character symbol - ");
+		String player2Sym = keyboard.nextLine();
+		
+		printBoard(board);
+		
+		while(winConditions(board, player1Sym, player2Sym) == false)
+		{
+			System.out.println("Player 1, where do you want to go? (0-8) ");
+			player1Move = keyboard.nextInt();
+			
+			board = move(player1Move, player1Sym, board);
+			printBoard(board);
+			
+			System.out.println("Player 2, where do you want to go? (0-8) ");
+			player2Move = keyboard.nextInt();
+			
+			board = move(player2Move, player2Sym, board);
+			printBoard(board);
+		}
+		System.out.println("Game over!");
+		
 	}
 	/**
 	*Creates a tic tac toe board to use
@@ -84,14 +113,14 @@ public class ticTacToe
 		
 		int index = 0;
 		boolean win = false;
-		int[][] winPossibilities = [[0, 1, 2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
+		int[][] winPossibilities = {{0, 1, 2}, {3,4,5}, {6,7,8}, {0,3,6}, {1,4,7}, {2,5,8}, {0,4,8}, {2,4,6}};
 		for (int x = 0; x < winPossibilities.length; x++)
 		{
 			for (int i = 0; i < user1.length; i++)
 			{
 				while (index < 3)
 				{
-					if (winPossibiliites[x][index] == user1[i])
+					if (winPossibilities[x][index] == user1[i])
 						wincounter++;
 					index++;
 				}
@@ -118,12 +147,12 @@ public class ticTacToe
 		{
 			for (int k = 0; k < arr[i].length; k++)
 			{
-				if (arr[i][k].equals(symbol1)
+				if (arr[i][k].equals(symbol1))
 				{
 					index1 = Integer.parseInt(arr[i][k]);
 					user1[index1]++;
 				}
-				if (arr[i][k].equals(symbol2)
+				if (arr[i][k].equals(symbol2))
 				{
 					index2 = Integer.parseInt(arr[i][k]);
 					user2[index2]++;
