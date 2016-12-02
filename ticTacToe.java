@@ -31,7 +31,8 @@ public class ticTacToe
 			
 			board = move(player1Move, player1Sym, board);
 			printBoard(board);
-			
+			if (winConditions(board, player1Sym, player2Sym) == true)
+				break;
 			System.out.println("Player 2, where do you want to go? (0-8) ");
 			player2Move = keyboard.nextInt();
 			
@@ -114,6 +115,7 @@ public class ticTacToe
 		int index = 0;
 		boolean win = false;
 		int[][] winPossibilities = {{0, 1, 2}, {3,4,5}, {6,7,8}, {0,3,6}, {1,4,7}, {2,5,8}, {0,4,8}, {2,4,6}};
+		
 		for (int x = 0; x < winPossibilities.length; x++)
 		{
 			for (int i = 0; i < user1.length; i++)
@@ -143,6 +145,7 @@ public class ticTacToe
 		int[] user2 = new int[9];
 		int index1;
 		int index2;
+		int[] checkarr = {0,1,2,3,4,5,6,7,8};
 		for (int i = 0; i < arr.length; i++)
 		{
 			for (int k = 0; k < arr[i].length; k++)
