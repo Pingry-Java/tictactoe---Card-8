@@ -89,21 +89,20 @@ public class ticTacToe
 		{
 			for (int i = 0; i < user1.length; i++)
 			{
-				index = 0;
 				while (index < 3)
 				{
 					if (winPossibiliites[x][index] == user1[i])
 						wincounter++;
 					index++;
 				}
-				if (wincounter == 3)
-					break;
+				index = 0;
 			}
 			if (wincounter == 3)
 			{
 				win = true;
 				break;
 			}
+			wincounter = 0;
 		}
 		
 		return win;
