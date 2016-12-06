@@ -4,7 +4,7 @@
 3.Write the main program
 */
 import java.util.Scanner;
-public class ticTacToe
+public class TicTacToe
 {
 	/**
 	*Main function where the game is played. The coding for the game should be here.
@@ -152,13 +152,15 @@ public class ticTacToe
 			{
 				if (arr[i][k].equals(symbol1))
 				{
-					index1 = Integer.parseInt(arr[i][k]);
+					index1 = (3 * i) + k;
+					//Integer.parseInt(arr[i][k]); //an error here believe they wanted position
 					user1[index1]++;
 				}
 				if (arr[i][k].equals(symbol2))
 				{
-					index2 = Integer.parseInt(arr[i][k]);
-					user2[index2]++;
+					index2 = (3*i) + k;
+					//Integer.parseInt(arr[i][k]);  //same here
+					user2[index2]++; 
 				}
 			}
 		}
