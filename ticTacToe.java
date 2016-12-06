@@ -4,7 +4,7 @@
 3.Write the main program
 */
 import java.util.Scanner;
-public class ticTacToe
+public class TicTacToe
 {
 	/**
 	*Main function where the game is played. The coding for the game should be here.
