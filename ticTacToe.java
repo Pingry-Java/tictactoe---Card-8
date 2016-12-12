@@ -166,6 +166,14 @@ public class TicTacToe
 		return win;
 	}
 	
+	/**
+	 * This method returns the integer locations of letters for each player
+	 * @param arr this is the current board state
+	 * @param symbol1 this is player1's symbol
+	 * @param symbol2 this is player2's symbol
+	 * @return a 2D list that includes all the used spaces for each player
+	 */
+	
 	public static int[][] arrayInfo(String[][] arr, String symbol1, String symbol2)
 	{
 		int[] user1 = new int[9];
