@@ -24,7 +24,7 @@ public class TicTacToe
 		
 		printBoard(board);
 		
-		while(winConditions(board, player1Sym, player2Sym) == false)
+		while(winConditions(board, player2Sym, player1Sym) == false)
 		{
 			System.out.println("Player 1, where do you want to go? (0-8) ");
 			player1Move = keyboard.nextInt();
