@@ -29,7 +29,7 @@ public class TicTacToe
 		
 		printBoard(board);
 		
-		while(winConditions(board, player2Sym, player1Sym) == false)
+		while(!(winConditions(board, player2Sym, player1Sym)))
 		{
 			turn++;
 			System.out.println("Player 1, where do you want to go? (0-8) ");
@@ -44,6 +44,9 @@ public class TicTacToe
 			printBoard(board);
 			if (winConditions(board, player1Sym, player2Sym) == true)
 				break;
+			else if(turn==9){
+				break;
+			}
 			turn++;
 			System.out.println("Player 2, where do you want to go? (0-8) ");
 			player2Move = keyboard.nextInt();
@@ -56,7 +59,10 @@ public class TicTacToe
 			board = move(player2Move, player2Sym, board);
 			printBoard(board);
 		}
-		if (turn%2==1){
+		if (turn==9){
+			System.out.println("It was a Draw!");
+		}
+		else if (turn%2==1){
 			System.out.println("Congratulations! Player 1 Wins!");
 		}
 		else{
