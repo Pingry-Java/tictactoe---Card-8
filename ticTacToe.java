@@ -22,6 +22,10 @@ public class TicTacToe
 		
 		System.out.println("Player 2, enter your 1 character symbol - ");
 		String player2Sym = keyboard.nextLine();
+		while (player2Sym.equals(player1Sym)){
+			System.out.println("That character symbol was already, please choose another one");
+			player2Sym = keyboard.nextLine();
+		}
 		
 		printBoard(board);
 		
