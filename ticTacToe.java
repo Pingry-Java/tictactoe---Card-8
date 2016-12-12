@@ -14,6 +14,7 @@ public class TicTacToe
 		Scanner keyboard = new Scanner(System.in);
 		int player1Move = 0;
 		int player2Move = 1;
+		int turn = 0;
 		String[][] board = buildBoard();
 		
 		System.out.println("Player 1, enter your 1 character symbol - ");
@@ -26,20 +27,37 @@ public class TicTacToe
 		
 		while(winConditions(board, player2Sym, player1Sym) == false)
 		{
+			turn++;
 			System.out.println("Player 1, where do you want to go? (0-8) ");
 			player1Move = keyboard.nextInt();
+			
+			while (!(board[player1Move/3][player1Move%3].equals(Integer.toString(player1Move)))){
+				System.out.println("That space was already chosen, please choose another");
+				player1Move = keyboard.nextInt();
+			}
 			
 			board = move(player1Move, player1Sym, board);
 			printBoard(board);
 			if (winConditions(board, player1Sym, player2Sym) == true)
 				break;
+			turn++;
 			System.out.println("Player 2, where do you want to go? (0-8) ");
 			player2Move = keyboard.nextInt();
+			
+			while (!(board[player2Move/3][player2Move%3].equals(Integer.toString(player2Move)))){
+				System.out.println("That space was already chosen, please choose another");
+				player2Move = keyboard.nextInt();
+			}
 			
 			board = move(player2Move, player2Sym, board);
 			printBoard(board);
 		}
-		System.out.println("Game over!");
+		if (turn%2==1){
+			System.out.println("Congratulations! Player 1 Wins!");
+		}
+		else{
+			System.out.println("Congratulations! Player 2 Wins!");
+		}
 		
 	}
 	/**
@@ -91,7 +109,6 @@ public class TicTacToe
 	{
 		int col = position % 3;
 		int row = position / 3;
-
 		board[row][col] = userSymbol;
 
 		return board;
